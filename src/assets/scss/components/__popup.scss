@@ -1,0 +1,141 @@
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, .6);
+  z-index: 9999;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__holder {
+    width: 90%;
+    margin: 0 auto;
+    background-color: $neutral-color-lightest;
+    @extend %slide-in-right;
+    @include propVw('padding', 15);
+    @include propVw('border-radius', 6);
+
+    @include not-mobile {
+      @include propVw('max-width', 320);
+    }
+  }
+
+  &__subtitle,
+  &__title {
+    color: $neutral-color-darkest;
+    text-align: center;
+    margin: 0;
+    @include propVw('padding-bottom', 15);
+  }
+
+  &__button {
+    @extend %reset-button;
+    width: 100%;
+    @include propVw('height', 40);
+    @include propVw('line-height', 40);
+    @include propVw('font-size', 16);
+    @include propVw('margin-bottom', 8);
+    @include propVw('border-radius', 20);
+    background: $neutral-color-dark;
+    color: $neutral-color-lightest;
+
+    .icon {
+      display: none;
+    }
+  }
+  
+  &__button[disabled] {
+    background: $neutral-color-lighter;
+    color: $neutral-color;
+    pointer-events: none;
+  }
+  
+  &__button--create-user,
+  &__button--update-user {
+    background-color: $primary-color;
+    transition: all .2s ease;
+    
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  &__button--delete-user {
+    background-color: $alternative-color;
+    transition: all .2s ease;
+    
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  &__icon {
+    display: none;
+    @include propVw('width', 80);
+    margin: 0 auto;
+  }
+
+  &__button,
+  &__content,
+  &__icon,
+  &__subtitle,
+  &__title,
+  .form__message {
+    display: none
+  }
+}
+
+.popup.popup--active {
+  display: block;
+
+  .popup__button--cancel,
+  .form__group--error .form__message,
+  &.popup--create-user *[class*=create-user],
+  &.popup--update-user *[class*=update-user],
+  &.popup--delete-user *[class*=delete-user],
+  &.popup--error-validation *[class*=error-validation],
+  &.popup--error-general *[class*=error-general],
+  &.popup--sucess-create *[class*=sucess-create],
+  &.popup--sucess-update *[class*=sucess-update],
+  &.popup--sucess-delete *[class*=sucess-delete] {
+    display: block
+  }
+}
+
+.popup.popup--loading {
+  .popup__button:not(.popup__button--cancel) {
+    position: relative;
+    pointer-events: none;
+
+    &:before {
+      content: "";
+      width: 100%;
+      height: 30px;
+      display: block;
+      position: absolute;
+      top: 10px;
+      left: 0;
+      background: {
+        image: url('../../icons/loading.svg');
+        position: center;
+        repeat: no-repeat;
+        size: contain;
+      }
+      filter: contrast(0) brightness(100);
+      @extend %spin-infinity;
+    }
+
+    span {
+      display: none;
+    }
+  }
+}

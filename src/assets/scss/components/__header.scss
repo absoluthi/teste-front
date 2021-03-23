@@ -1,0 +1,13 @@
+.header {
+  background: $secondary-color;
+
+  &__holder {
+    @extend %container-full;
+  }
+
+  &__title {
+    color: $neutral-color-lightest;
+    @include propVw('font-size', 26);
+    @include propVw('line-height', 40);
+  }
+}

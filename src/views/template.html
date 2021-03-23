@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teste Easynvest Front-end</title>
+</head>
+
+<body id="home" class="page">
+  <header id="header" class="header">
+    <div class="header__wrapper">
+      <div class="header__holder">
+        <h1 class="header__title">Tabela de usuários</h1>
+      </div>
+    </div>
+  </header>
+  <main id="content" class="page__content">
+    <section class="users-table">
+      <div class="users-table__wrapper">
+        <div class="users-table__holder">
+          <div id="users-table" class="users-table__table">
+            <div class="users-table__head">
+              <div class="users-table__line">
+                <div class="users-table__column users-table__column--name">
+                  <p class="users-table__text users-table__text--title">Nome</p>
+                </div>
+                <div class="users-table__column users-table__column--cpf">
+                  <p class="users-table__text users-table__text--title">CPF</p>
+                </div>
+                <div class="users-table__column users-table__column--phone">
+                  <p class="users-table__text users-table__text--title">Telefone</p>
+                </div>
+                <div class="users-table__column users-table__column--email">
+                  <p class="users-table__text users-table__text--title">E-mail</p>
+                </div>
+                <div class="users-table__column users-table__column--actions">
+                  <p class="users-table__text users-table__text--title">Ações</p>
+                </div>
+              </div>
+            </div>
+            <div class="users-table__body">
+              <div class="users-table__line">
+                <div class="users-table__column users-table__column--name">
+                  <p class="users-table__text">Nome</p>
+                </div>
+                <div class="users-table__column users-table__column--cpf">
+                  <p class="users-table__text">CPF</p>
+                </div>
+                <div class="users-table__column users-table__column--phone">
+                  <p class="users-table__text">Telefone</p>
+                </div>
+                <div class="users-table__column users-table__column--email">
+                  <p class="users-table__text">E-mail</p>
+                </div>
+                <div class="users-table__column users-table__column--actions">
+                  <button class="users-table__button users-table__button--edit">
+                    <i class="icon icon--edit">
+                      <img src="../assets/icons/edit-user.svg" alt="Editar Usuário">
+                    </i>
+                  </button>
+                  <button class="users-table__button users-table__button--remove">
+                    <i class="icon icon--remove">
+                      <img src="../assets/icons/delete-user.svg" alt="Deleter Usuário">
+                    </i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <small class="disclaimer">Clique no título "Nome" para mostrar a coluna de nomes </small>
+    <button id="new-user-btn" class="floating-button">
+      <i class="icon icon--create">
+        <img src="../assets/icons/create-user.svg" alt="Adicionar usuário">
+      </i>
+    </button>
+  </main>
+  <section id="popup" class="popup">
+    <div class="popup__wrapper">
+      <div class="popup__holder">
+        <div class="popup__header">
+          <div class="popup__image">
+            <div class="popup__icon popup__icon--error-validation">
+              <i class="icon icon--error"><img src="../assets/icons/error.svg" alt="Erro"></i>
+            </div>
+            <div class="popup__icon popup__icon--error-validation popup__icon--sucess-create popup__icon--sucess-update popup__icon--sucess-delete ">
+              <i class="icon icon--sucess"><img src="../assets/icons/sucess.svg" alt="Sucesso"></i>
+            </div>
+            <div class="popup__icon popup__icon--create-user">
+              <i class="icon icon--create-user"><img src="../assets/icons/create-user.svg" alt=""></i>
+            </div>
+            <div class="popup__icon popup__icon--update-user">
+              <i class="icon icon--update-user"><img src="../assets/icons/update-user.svg" alt=""></i>
+            </div>
+            <div class="popup__icon popup__icon--delete-user">
+              <i class="icon icon--delete-user"><img src="../assets/icons/delete-user.svg" alt=""></i>
+            </div>
+          </div>
+          <h3 class="popup__title popup__title--create-user">Novo usuário</h3>
+          <h3 class="popup__title popup__title--delete-user">Confirmar exclusão</h3>
+          <h3 class="popup__title popup__title--update-user">Editar usuário</h3>
+          <h3 class="popup__title popup__title--error-validation">Erro na validação</h3>
+          <h3 class="popup__title popup__title--sucess-create">Cadastro realizado</h3>
+          <h3 class="popup__title popup__title--sucess-update">Alterações realizadas</h3>
+          <h3 class="popup__title popup__title--sucess-delete">Usuário deletado</h3>
+          <h4 class="popup__subtitle popup__subtitle--create-user">Preencha o formulário abaixo com as informações necessárias. <strong>Todos os campos são obrigatórios</strong></h4>
+          <h4 class="popup__subtitle popup__subtitle--delete-user">Tem certeza deseja fazer isso? Essa ação não pode ser desfeita.</h4>
+          <h4 class="popup__subtitle popup__subtitle--error-validation">Preencha corretamente os campos em vermelho no form</h4>
+          <h4 class="popup__subtitle popup__subtitle--sucess-create">O usuário foi inserido na tabela com sucesso!</h4>
+          <h4 class="popup__subtitle popup__subtitle--update-user">Insira as novas informações e clique em Salvar.</h4>
+          <h4 class="popup__subtitle popup__subtitle--sucess-update">As novas informações do usuário foram inseridas na tabela com sucesso!</h4>
+          <h4 class="popup__subtitle popup__subtitle--sucess-delete">As informações do usuário foram excluídas com sucesso!</h4>
+        </div>
+        <div class="popup__body">
+          <div class="popup__content popup__content--create-user popup__content--update-user">
+            <section class="form">
+              <div class="form__wrapper">
+                <div class="form__holder">
+                  <form id="user-form" class="form__element">
+                    <fieldset class="form__group">
+                      <label class="form__label" for="name-input">Nome Completo(sem abreviações)</label>
+                      <input type="text" id="name-input" class="form__input" placeholder="Nome Completo(sem abreviações)" required>
+                      <small class="form__message">Esse campo deve ter 3 caracteres ou mais</small>
+                    </fieldset>
+                    <fieldset class="form__group">
+                      <label class="form__label" for="email-input">E-mail</label>
+                      <input type="text" id="email-input" class="form__input" placeholder="E-mail" required>
+                      <small class="form__message">Esse campo deve ter 3 caracteres ou mais</small>
+                    </fieldset>
+                    <fieldset class="form__group">
+                      <label class="form__label" for="cpf-input">CPF</label>
+                      <input type="text" id="cpf-input" class="form__input" placeholder="CPF" maxlength="14" required>
+                      <small class="form__message">Esse campo deve ter 3 caracteres ou mais</small>
+                    </fieldset>
+                    <fieldset class="form__group">
+                      <label class="form__label" for="phone-input">Telefone</label>
+                      <input type="text" id="phone-input" class="form__input" placeholder="Telefone" maxlength="13" required>
+                      <small class="form__message">Esse campo deve ter 3 caracteres ou mais</small>
+                    </fieldset>
+                    <fieldset class="form__actions">
+                      <button type="submit" id="submit-form-btn" class="form__submit">Enviar</button>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="popup__footer">
+          <button id="create-user-btn" class="popup__button popup__button--create-user">
+            <i class="icon icon--loading">
+              <img src="../assets/icons/loading.svg" alt="">
+            </i><span>Cadastrar</span>
+          </button>
+          <button id="update-user-btn" class="popup__button popup__button--update-user">
+            <i class="icon icon--loading">
+              <img src="../assets/icons/loading.svg" alt="">
+            </i>
+            <span>Salvar</span>
+          </button>
+          <button id="delete-user-btn" class="popup__button popup__button--delete-user"><i class="icon icon--loading">
+              <img src="../assets/icons/loading.svg" alt="">
+            </i>
+            <span>Deletar</span></button>
+          <button id="cancel-popup-btn" class="popup__button popup__button--cancel">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="loading" class="loading">
+    <div class="loading__icon icon icon--loading icon--contrast"><img src="../assets/icons/loading.svg" alt="Carregando"></div>
+  </section>
+</body>
+
+</html>

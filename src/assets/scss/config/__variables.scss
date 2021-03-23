@@ -1,0 +1,33 @@
+$main-font: 'Verdana';
+$custom-font: 'Arial';
+
+/* --- CORES --- */
+$primary-color-light: rgba(#00c8b3, .7);
+$primary-color: #00c8b3;
+$secondary-color-light: #b130a6;
+$secondary-color: #87027b;
+$alternative-color: #eb4a46;
+$neutral-color-lightest: #ffffff;
+$neutral-color-lighter: #f6f6f6;
+$neutral-color-light: #efeeed;
+$neutral-color: #dcdcdc;
+$neutral-color-dark: #adacac;
+// $neutral-color-darker: #333333;
+$neutral-color-darkest: #333333;
+
+/* --- TAMANHO DE FONTE --- */
+$fs-base-biggest: 32px;
+$fs-base-bigger: 26px;
+$fs-base-big: 24px;
+$fs-base-medium: 20px;
+$fs-base: 16px;
+$fs-base-small: 14px;
+$fs-base-smaller: 12px;
+$fs-base-smallest: 10px;
+
+/* --- usado no calculo pxToVw() --- */
+$big-desk-vw: 1920;
+$desk-vw: 1366;
+$tab-vw: 768;
+$mob-vw: 360;
+$current-view: 'mob';

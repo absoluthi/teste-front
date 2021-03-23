@@ -1,0 +1,59 @@
+.form {
+
+  &__group {
+    position: relative;
+    transition: all .15s ease-in;
+    padding-top: 15px;
+  }
+
+  &__group--error {
+    .form__input {
+      border-color: $alternative-color;
+    }
+  }
+
+  &__group--active {
+    .form__label {
+      font-size: 11px;
+      top: 0;
+      line-height: 15px;
+    }
+  }
+
+  &__message {
+    color: $alternative-color
+  }
+
+  &__label {
+    color: $neutral-color;
+    background: $neutral-color-lightest;
+    line-height: $fs-base-biggest;
+    font-size: $fs-base;
+    outline: none;
+    transition: all .15s ease-in-out;
+    position: absolute;
+    top: 15px;
+    left: 0;
+    animation: all .1s ease-in
+  }
+
+  &__input {
+    @extend %reset-input;
+    width: 100%;
+    @include placeholder($neutral-color);
+    line-height: $fs-base-biggest;
+    font-size: $fs-base;
+    border-bottom: 1px solid $neutral-color-light;
+    transition: all .15s ease-in-out;
+    outline: none;
+    @include propVw('margin-bottom', 10);
+
+    &:focus {
+      border-color: $neutral-color-darkest;
+    }
+  }
+
+  &__submit {
+    display: none;
+  }
+}

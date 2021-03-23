@@ -1,0 +1,19 @@
+.floating-button {
+  @extend %reset-button;
+  line-height: 0;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  @include propVw('width', 70);
+  @include propVw('height', 70);
+  @include propVw('padding', 15);
+  @include propVw('border-radius', 35);
+  box-shadow: 2px 2px 4px -3px #000;
+  background: $neutral-color;
+  animation: all .1s ease;
+
+  &:hover {
+    box-shadow: 2px 2px 7px -3px #000;
+  }
+}

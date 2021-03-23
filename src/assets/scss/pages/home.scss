@@ -1,0 +1,27 @@
+@import '../config/config';
+@import '../components/components';
+
+.page {
+  &__content {
+    @extend %container-main;
+    
+
+    @include mobile {
+      padding: 0;
+    }
+  }
+
+  .disclaimer {
+    font-size: $fs-base-smaller;
+    color: $neutral-color-dark;
+    @include propVw('padding-left', 8);
+
+    @include desktop {
+      display: none;
+    }
+
+    @include big-desktop {
+      display: none;
+    }
+  }
+}

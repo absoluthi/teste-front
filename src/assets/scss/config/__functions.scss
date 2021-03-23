@@ -1,0 +1,62 @@
+@function pxvw($size, $context: $mob-vw) {
+  @if $size {
+    @return $size / ($context * 0.01) * 1vw;
+  }
+
+  @else {
+    @error "faltam valores na funcao;";
+  }
+}
+
+@mixin propVw($prop, $value, $important: false) {
+
+  //$value / (conext / 100)) * 1vw
+  //context é a largura da tela
+  @if $important {
+    #{$prop}: (($value / ($mob-vw / 100)) * 1vw) !important;
+  }
+
+  @else {
+    #{$prop}: (($value / ($mob-vw / 100)) * 1vw);
+  }
+
+  @include tablet {
+    $newUnit: (($value / ($tab-vw / 100)) * 1vw);
+
+    @if $important {
+      #{$prop}: $newUnit !important;
+
+    }
+
+    @else {
+      #{$prop}: $newUnit;
+    }
+  }
+
+  @include desktop {
+    $newUnit: (($value / ($desk-vw / 100)) * 1vw);
+
+    @if $important {
+      #{$prop}: $newUnit !important;
+
+    }
+
+    @else {
+      #{$prop}: $newUnit;
+    }
+  }
+
+  @include big-desktop {
+    $newUnit: (($value / ($big-desk-vw / 100)) * 1vw);
+
+    @if $important {
+      #{$prop}: $newUnit !important;
+
+    }
+
+    @else {
+      #{$prop}: $newUnit;
+    }
+  }
+
+}

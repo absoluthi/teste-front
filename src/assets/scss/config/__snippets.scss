@@ -1,0 +1,79 @@
+// -------------------------------------
+// reset default button styles
+// -------------------------------------
+%reset-button {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  outline: 0;
+}
+
+// -------------------------------------
+// reset default list styles
+// -------------------------------------
+%reset-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+// -------------------------------------
+// reset default link styles
+// -------------------------------------
+%reset-link {
+  // text-transform: capitalize;
+  display: inline-block;
+  cursor: pointer;
+  line-height: 1;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// -------------------------------------
+// reset default input styles
+// -------------------------------------
+%reset-input {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+// -------------------------------------
+// container component
+// -------------------------------------
+%container-main {
+  width: 100%;
+  @include propVw('padding-right', 16);
+  @include propVw('padding-left', 16);
+
+  @include tablet {
+    max-width: pxvw(1104, $tab-vw);
+    margin: 0 auto;
+  }
+
+  @include desktop {
+    padding: 0;
+    max-width: pxvw(1104, $desk-vw);
+    margin: 0 auto;
+  }
+
+  @include big-desktop {
+    padding: 0;
+    max-width: pxvw(1800, $big-desk-vw);
+    margin: 0 auto;
+  }
+}
+
+// -------------------------------------
+// container component
+// -------------------------------------
+%container-full {
+  width: 100%;
+  @include propVw('padding-right', 16);
+  @include propVw('padding-left', 16);
+}
